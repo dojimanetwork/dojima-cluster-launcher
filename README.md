@@ -98,10 +98,8 @@ To you have a Kubernetes cluster up and running, please refer to the [documentat
 terraform init -upgrade
 ```
 
-terraform apply
-
 kubeconfig-aws:
-	aws eks --region $(shell cd aws && terraform output -raw region) update-kubeconfig --name $(shell cd aws && terraform output -raw cluster_name)
+aws eks --region $(shell cd aws && terraform output -raw region) update-kubeconfig --name $(shell cd aws && terraform output -raw cluster_name)
 
 If installing plugins or modules, ignore previously-downloaded objects and install the latest version allowed within the configured constraints.
 
